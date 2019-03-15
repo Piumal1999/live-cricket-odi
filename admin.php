@@ -38,14 +38,14 @@ if (!isset($_SESSION['type']) && $_SESSION['type'] != 'admin') {
 
                 <div class="row">
 
-
+                    <span>Team</span>
                     <span class="form-group">
-                        <label for="sel1">Team</label>
+                        <label for="team">Team</label>
                         <select class="form-control" id="team">
                             <option>SACK</option>
                             <option>TCK</option>
                         </select>
-                    </span><br><br>
+                    </span>
 
                     <span>Description</span>
                     <input type="text" name="description" id="description" placeholder="Description"><br><br>
