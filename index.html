@@ -78,8 +78,6 @@ d.js doesn't work if you view the page via file:// -->
 <body class="wide">
 
 
-
-
 <section class="padd-tb-60 bg-gray">
     <div class="container">
         <div class="heading text-center padd-b-30  wow fadeIn">
@@ -90,58 +88,15 @@ d.js doesn't work if you view the page via file:// -->
         <div class="row">
 
 
+            <div class="col-md-4 col-sm-4" id="content">
 
 
-            <div class="col-md-4 col-sm-4">
-
-                <div class="feature-box style6">
-                    <div class="text-center">
-                    <span class="h3">38th One-day Encounter</span>
-                        <br><br>
-                    </div>
-                    <div>
-                        <img src="img/sack.jpg">
-                        <span> &nbsp;&nbsp;</span>
-                        <span class="h4">SACK</span>
-                        <span> &nbsp;&nbsp;</span>
-                        <span class="h4">100</span>
-                        <span class="h4">/</span>
-                        <span class="h4">1</span>
-                        <span> &nbsp;&nbsp;</span>
-                        <span>(</span>
-                        <span>10</span>
-                        <span>.</span>
-                        <span>4</span>
-                        <span>overs)</span>
-
-                    </div>
-<br>
-                    <div>
-                        <img src="img/tck.png">
-                        <span> &nbsp;&nbsp;</span>
-                        <span class="h4">TCK</span>
-                        <span> &nbsp;&nbsp;</span>
-                        <span class="h4"> Yet to Bat</span>
-
-                        <!--<span class="h4">100</span>-->
-                        <!--<span class="h4">/</span>-->
-                        <!--<span class="h4">1</span>-->
-                        <!--<span> &nbsp;&nbsp;</span>-->
-                        <!--<span>(</span>-->
-                        <!--<span>10</span>-->
-                        <!--<span>.</span>-->
-                        <!--<span>4</span>-->
-                        <!--<span>overs)</span>-->
-                    </div>
-                    <br>
-                    <div class="h6 text-center">SACK won the Toss and elected to Bat</div>
-                </div>
 
             </div>
             <div class="col-md-2">
 
                 <div class="feature-box4 style6 padd-20 bg-light text-center">
-                <i class="fa fa-desktop circle"></i><br>
+                    <i class="fa fa-desktop circle"></i><br>
                     <h2>Watch LIVE</h2>
                     <br>
                 </div>
@@ -320,10 +275,10 @@ d.js doesn't work if you view the page via file:// -->
                 <!-- ./subscribe -->
 
                 <!--<div>-->
-                    <!--<h4>MicroBit Hackathon Organized by Antonian Computer Fraternity</h4>-->
-                    <!--<div class="separator"></div>-->
-                    <!--<a href="https://drive.google.com/open?id=0B_ugZCOs7nKldnc4RHNhbDNoT3hPODFUZ08tQkQtOGxLUmdV"-->
-                       <!--class="btn radial btn-blue hvr-icon-wobble-horizontal">Download Booklet..</a>-->
+                <!--<h4>MicroBit Hackathon Organized by Antonian Computer Fraternity</h4>-->
+                <!--<div class="separator"></div>-->
+                <!--<a href="https://drive.google.com/open?id=0B_ugZCOs7nKldnc4RHNhbDNoT3hPODFUZ08tQkQtOGxLUmdV"-->
+                <!--class="btn radial btn-blue hvr-icon-wobble-horizontal">Download Booklet..</a>-->
                 <!--</div>-->
 
             </div>
@@ -335,8 +290,6 @@ d.js doesn't work if you view the page via file:// -->
     </div>
     <!-- ./container -->
 </section>
-
-
 
 
 <!-- footer-sub -->
@@ -369,11 +322,12 @@ d.js doesn't work if you view the page via file:// -->
 
 </div>
 <!-- //wrapper -->
-
+</body>
 
 <!-- jquery -->
 <script src="js/jquery-1.11.3.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
 
 <!-- morris -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.4/raphael-min.js"></script>
@@ -425,7 +379,48 @@ d.js doesn't work if you view the page via file:// -->
 <!-- main -->
 <script src="js/main.js"></script>
 
+<script type="text/html" id="temp">
+    <div class="feature-box style6">
+        <div class="text-center">
+            <span class="h3">38th One-day Encounter</span>
+            <br><br>
+        </div>
+        <div>
+            <img src="img/sack.jpg">
+            <span> &nbsp;&nbsp;</span>
+            <span class="h4">SACK</span>
+            <span> &nbsp;&nbsp;</span>
+            <span class="h4">100</span>
+            <span class="h4">/</span>
+            <span class="h4">1</span>
+            <span> &nbsp;&nbsp;</span>
+            <span>(</span>
+            <span>10</span>
+            <span>.</span>
+            <span>4</span>
+            <span>overs)</span>
 
-</body>
+        </div>
+        <br>
+        <div>
+            <img src="img/tck.png">
+            <span> &nbsp;&nbsp;</span>
+            <span class="h4">TCK</span>
+            <span> &nbsp;&nbsp;</span>
+            <span class="h4">100</span>
+            <span class="h4">/</span>
+            <span class="h4">1</span>
+            <span> &nbsp;&nbsp;</span>
+            <span>(</span>
+            <span>10</span>
+            <span>.</span>
+            <span>4</span>
+            <span>overs)</span>
+        </div>
+        <br>
+        <div class="h6 text-center">SACK won the Toss and elected to Bat</div>
+    </div>
+</script>
+
 
 </html>

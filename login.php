@@ -26,7 +26,7 @@
             let password = $("#password").val();
 
             $.ajax({
-                url : "http://localhost/live-cricket-updates/api/v1/login",
+                url : "http://localhost/live-cricket-odi/api/login",
                 type : "post",
                 dataType : "json",
                 data : {
