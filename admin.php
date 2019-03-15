@@ -1,10 +1,10 @@
 <?php
-session_start();
-if (!isset($_SESSION['type']) && $_SESSION['type'] != 'admin') {
-    header('Location: login.php');
-    die();
-}
-?>
+//session_start();
+//if (!isset($_SESSION['type']) && $_SESSION['type'] != 'admin') {
+//    header('Location: login.php');
+//    die();
+//}
+//?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -103,7 +103,7 @@ if (!isset($_SESSION['type']) && $_SESSION['type'] != 'admin') {
 <script>
 
     $(function () {
-        $('#cli').click(function () {
+        $('#btnSubmit').click(function () {
             let team = $('#team').val()
             let description = $('#description').val()
             let score = $('#score').val()

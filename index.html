@@ -89,7 +89,23 @@ d.js doesn't work if you view the page via file:// -->
 
 
             <div class="col-md-4 col-sm-4" id="content">
+                <div class="feature-box style6">
+                    <div class="text-center">
+                        <span class="h3">38th One-day Encounter</span>
+                        <br><br>
+                    </div>
+                    <div id="SACK">
 
+                    </div>
+                    <br>
+                    <div id="TCK">
+
+                    </div>
+                    <br>
+                    <div class="h6 text-center" id="description">
+
+                    </div>
+                </div>
 
 
             </div>
@@ -379,48 +395,81 @@ d.js doesn't work if you view the page via file:// -->
 <!-- main -->
 <script src="js/main.js"></script>
 
-<script type="text/html" id="temp">
-    <div class="feature-box style6">
-        <div class="text-center">
-            <span class="h3">38th One-day Encounter</span>
-            <br><br>
-        </div>
-        <div>
-            <img src="img/sack.jpg">
-            <span> &nbsp;&nbsp;</span>
-            <span class="h4">SACK</span>
-            <span> &nbsp;&nbsp;</span>
-            <span class="h4">100</span>
-            <span class="h4">/</span>
-            <span class="h4">1</span>
-            <span> &nbsp;&nbsp;</span>
-            <span>(</span>
-            <span>10</span>
-            <span>.</span>
-            <span>4</span>
-            <span>overs)</span>
+<script type="text/html" id="tempSACK">
+    <img src="img/sack.jpg">
+    <span> &nbsp;&nbsp;</span>
+    <span class="h4">SACK</span>
+    <span> &nbsp;&nbsp;</span>
+    <span class="h4">{{runs}}</span>
+    <span class="h4">/</span>
+    <span class="h4">{{wickets}}</span>
+    <span> &nbsp;&nbsp;</span>
+    <span>(</span>
+    <span>{{overs}}</span>
+    <span>overs)</span>
 
-        </div>
-        <br>
-        <div>
-            <img src="img/tck.png">
-            <span> &nbsp;&nbsp;</span>
-            <span class="h4">TCK</span>
-            <span> &nbsp;&nbsp;</span>
-            <span class="h4">100</span>
-            <span class="h4">/</span>
-            <span class="h4">1</span>
-            <span> &nbsp;&nbsp;</span>
-            <span>(</span>
-            <span>10</span>
-            <span>.</span>
-            <span>4</span>
-            <span>overs)</span>
-        </div>
-        <br>
-        <div class="h6 text-center">SACK won the Toss and elected to Bat</div>
-    </div>
 </script>
+<script>
+    $(function () {
+        setInterval(function () {
+            $.ajax({
+                type: 'get',
+                url: 'api/index.php/get-score/SACK',
+                dataType: 'json',
+                success: function (data) {
+                    let object = Mustache.render($("#tempSACK").html(), data)
+                    $("#SACK").html(object)
+                }
+            })
+        }, 500)
+    })
+</script>
+<script type="text/html" id="tempTCK">
+    <img src="img/tck.png">
+    <span> &nbsp;&nbsp;</span>
+    <span class="h4">TCK</span>
+    <span> &nbsp;&nbsp;</span>
+    <span class="h4">{{runs}}</span>
+    <span class="h4">/</span>
+    <span class="h4">{{wickets}}</span>
+    <span> &nbsp;&nbsp;</span>
+    <span>(</span>
+    <span>{{overs}}</span>
+    <span>overs)</span>
 
+</script>
+<script>
+    $(function () {
+        setInterval(function () {
+            $.ajax({
+                type: 'get',
+                url: 'api/index.php/get-score/TCK',
+                dataType: 'json',
+                success: function (data) {
+                    let object = Mustache.render($("#tempTCK").html(), data)
+                    $("#TCK").html(object)
+                }
+            })
+        }, 500)
+    })
+</script>
+<script id="tempDes" type="text/html">
+    <p>{{description}}</p>
+</script>
+<script>
+    $(function () {
+        setInterval(function () {
+            $.ajax({
+                type: 'get',
+                url: 'api/index.php/get-description',
+                dataType: 'json',
+                success: function (data) {
+                    let object = Mustache.render($("#tempDes").html(), data)
+                    $("#description").html(object)
+                }
+            })
+        }, 500)
+    })
+</script>
 
 </html>
