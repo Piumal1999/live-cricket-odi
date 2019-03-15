@@ -59,9 +59,6 @@ if (!isset($_SESSION['type']) && $_SESSION['type'] != 'admin') {
                     <span>Overs</span>
                     <input type="text" name="overs" id="overs" placeholder="Overs"><br><br>
 
-                    <span>Balls</span>
-                    <input type="text" name="balls" id="balls" placeholder="Balls"><br><br>
-
 
                     <input id="btnSubmit" type="submit">
 
@@ -103,7 +100,29 @@ if (!isset($_SESSION['type']) && $_SESSION['type'] != 'admin') {
 
 
 <script src="js/jquery-1.11.3.min.js"></script>
+<script>
 
+    $(function () {
+        $('#cli').click(function () {
+            let team = $('#team').val()
+            let description = $('#description').val()
+            let score = $('#score').val()
+            let wickets = $('#wickets').val()
+            let overs = $('#overs').val()
+            $.ajax({
+                type: 'post',
+                url: 'api/index.php/update-score',
+                dataType : 'json',
+                data: 'team='+team+'&description='+description+'&score='+score+'&wickets='+wickets+'&overs='+overs,
+                success: function (data) {
+                    alert('data sent')
+                    console.log(data)
+                }
+            })
+        })
+    })
+
+</script>
 
 </body>
 
