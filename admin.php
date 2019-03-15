@@ -38,6 +38,18 @@ if (!isset($_SESSION['type']) && $_SESSION['type'] != 'admin') {
 
                 <div class="row">
 
+
+                    <span class="form-group">
+                        <label for="sel1">Team</label>
+                        <select class="form-control" id="team">
+                            <option>SACK</option>
+                            <option>TCK</option>
+                        </select>
+                    </span><br><br>
+
+                    <span>Description</span>
+                    <input type="text" name="description" id="description" placeholder="Description"><br><br>
+
                     <span>Score</span>
                     <input type="text" name="score" id="score" placeholder="Score"><br><br>
 
